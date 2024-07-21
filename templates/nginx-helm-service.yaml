@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-helm-service
+spec:
+  selector:
+    app: nginx-helm-app
+  ports:
+  - port: 80
+    targetPort: 8086

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-helm-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-helm-app
+  template:
+    metadata:
+      labels:
+        app: nginx-helm-app
+    spec:
+      containers:
+      - name: nginx-helm-app
+        image: randilt/nginx-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8086

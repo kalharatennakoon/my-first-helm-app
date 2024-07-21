@@ -4,3 +4,5 @@ kubectl --namespace {{ .Values.namespace}} port-forward service/{{ .Values.appNa
 
 servicename=$(k get service -l "app=myhelmapp" -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward service/nginx-helm-service 8888:80 --namespace helm
+
+App can be accessed at, localhost:8888

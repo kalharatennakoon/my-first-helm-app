@@ -31,3 +31,10 @@ eg: helm install myfirstrelease myfirsthelmapp/
 
 - Check connection: `curl localhost:80`
 
+
+### Adding templates
+
+```bash
+helm upgrade firstrelease my-first-helm-app --values my-first-helm-app/values.yaml
+```
+

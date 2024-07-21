@@ -1,0 +1,5 @@
+namespace: prod
+
+configmap:
+  data:
+    MY_VALUE: "Welcome to Prod!"

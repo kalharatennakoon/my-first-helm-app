@@ -1,0 +1,6 @@
+servicename=$(k get service -l "app={{ .Values.appName }}" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace {{ .Values.namespace}} port-forward service/{{ .Values.appName }} 8888:80
+
+
+servicename=$(k get service -l "app=myhelmapp" -o jsonpath="{.items[0].metadata.name}")
+kubectl port-forward service/nginx-helm-service 8888:80 --namespace helm

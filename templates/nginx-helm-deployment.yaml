@@ -17,7 +17,7 @@ spec:
       - name: nginx-helm-container
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         ports:
-        - containerPort: 8086
+        - containerPort: 80
         envFrom:
         - configMapRef:
             name: {{ .Values.configmap.name }}

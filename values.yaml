@@ -1,0 +1,13 @@
+appName: nginx-helm
+
+namespace: helm
+
+configmap:
+  name: nginx-helm-configmap
+  data:
+    MY_VALUE: "Hello World!"
+
+
+image:
+  name: randilt/nginx-app
+  tag: latest

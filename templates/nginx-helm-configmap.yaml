@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-helm-configmap
+  name: {{ .Values.configmap.name }}
+  namespace: {{ .Values.namespace }}
 data:
-  myvalue: "Hello World"
+  MY_VALUE: {{ .Values.configmap.data.MY_VALUE }}

@@ -26,6 +26,7 @@ eg: helm install myfirstrelease myfirsthelmapp -n helm
 ```
 
 - check: `helm ls -n <namespace>`
+
 - Check created pods: `kubectl get all`
 
 - Ennable minikube tunnel: `minikube tunnel`

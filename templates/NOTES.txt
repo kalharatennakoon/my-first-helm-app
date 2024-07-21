@@ -2,7 +2,24 @@ servicename=$(k get service -l "app={{ .Values.appName }}" -o jsonpath="{.items[
 kubectl --namespace {{ .Values.namespace}} port-forward service/{{ .Values.appName }} 8888:80
 
 
-servicename=$(k get service -l "app=myhelmapp" -o jsonpath="{.items[0].metadata.name}")
-kubectl port-forward service/nginx-helm-service 8888:80 --namespace helm
+servicename=$(k get service -l "app={{ .Values.appName }}" -o jsonpath="{.items[0].metadata.name}")
+kubectl port-forward service/nginx-helm 8888:80 --namespace helm
+
+
+servicename=$(k get service -l "app={{ .Values.appName }}" -o jsonpath="{.items[0].metadata.name}")
+kubectl port-forward service/{{ .Values.appName }} 8888:80 --namespace {{ .Values.namespace }}
 
 App can be accessed at, localhost:8888
+
+
+Apply Dev & Prod environments
+Dev: helm install helm-app-release-dev my-first-helm-app --values my-first-helm-app/values.yaml -f my-first-helm-app/values-dev.yaml -n dev
+Prod: helm install helm-app-release-prod my-first-helm-app --values my-first-helm-app/values.yaml -f my-first-helm-app/values-prod.yaml -n prod
+
+$ helm ls --all-namespaces
+
+
+$ kubectl get all -n helm
+$ kubectl get all -n dev
+$ kubectl get all -n prod
+

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-helm-deployment
+  name: {{ .Values.appName }}
   namespace: {{ .Values.namespace }}
 spec:
   replicas: 3

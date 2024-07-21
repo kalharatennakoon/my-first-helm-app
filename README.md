@@ -20,11 +20,12 @@ eg: helm create myfirsthelmapp
 - Once your configuration files (yaml files) ready inside the  `templates` directory, you can deploy your application using below commanmd.
 ```
 # go to the root directory if you're inside the helm app.
-$ helm install <some-release-name> <your-helm-app-name>/
+$ helm install <some-release-name> <your-helm-app-name> -n <namespace>
 
-eg: helm install myfirstrelease myfirsthelmapp/
+eg: helm install myfirstrelease myfirsthelmapp -n helm
 ```
 
+- check: `helm ls -n <namespace>`
 - Check created pods: `kubectl get all`
 
 - Ennable minikube tunnel: `minikube tunnel`
@@ -35,6 +36,6 @@ eg: helm install myfirstrelease myfirsthelmapp/
 ### Adding templates
 
 ```bash
-helm upgrade firstrelease my-first-helm-app --values my-first-helm-app/values.yaml
+helm upgrade firstrelease my-first-helm-app --values my-first-helm-app/values.yaml -n helm
 ```
 

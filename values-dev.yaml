@@ -1,0 +1,7 @@
+# these configurations will overwrite default values.yaml
+
+namespace: dev
+
+configmap:
+  data:
+    MY_VALUE: "Welcome to Dev!"

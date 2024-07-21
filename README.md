@@ -13,7 +13,7 @@ eg: helm create myfirsthelmapp
 
 `charts` directory > if your chart has any dependencies on other charts this's where you put them.
 
-`templates` directory > 
+`templates` directory > k8s configuration files
 
 ### Deploy the application
 
